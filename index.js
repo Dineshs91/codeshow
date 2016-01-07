@@ -10,6 +10,10 @@ $(function() {
   editor2.setTheme("ace/theme/ambiance");
   editor2.getSession().setMode("ace/mode/java");
 
+  // By default keyboard handler will be emacs.
+  editor1.setKeyboardHandler("ace/keyboard/emacs");
+  editor2.setKeyboardHandler("ace/keyboard/emacs");
+
   populateLangs(languages);
   populateThemes(themes);
 
@@ -31,6 +35,12 @@ $(function() {
   $('.editor2.themes').change(function() {
     var theme = $(this).val();
     editor2.setTheme("ace/theme/" + theme);
+  });
+
+  $('.keybinding').change(function() {
+    var mode = $(this).val();
+    editor1.setKeyboardHandler("ace/keyboard/" + mode);
+    editor2.setKeyboardHandler("ace/keyboard/" + mode);
   });
 });
 

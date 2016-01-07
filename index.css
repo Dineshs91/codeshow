@@ -31,8 +31,13 @@ body {
   left: 48%;
 }
 
+.keybinding {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .editor1 {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 10px;
 }
 
