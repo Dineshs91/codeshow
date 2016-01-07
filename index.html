@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Codeshow</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/ace.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="index.css"></style>
+  </head>
+  <body>
+    <div id="header">
+      Codeshow
+    </div>
+
+  <select class="editor1 themes"></select><select class="editor1 languages"></select>
+<div id="editor1">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}
+</div>
+
+<select class="editor2 themes"></select><select class="editor2 languages"></select>
+<div id="editor2">package com.my.demo;
+
+public static void main(int[] args) {
+    System.out.println("Yay! It works!!!");
+}
+</div>
+        
+    <script src="index.js" type="text/javascript"></script>
+  </body>
+</html>

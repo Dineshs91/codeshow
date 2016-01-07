@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0277BD;
+}
+
+#header {
+  background-color: #01579B;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  height: 25px;
+  box-shadow: -4px 3px 15px -2px rgba(0,0,0,0.79)
+}
+
+#editor1 { 
+  position: absolute;
+  top: 15%;
+  right: 52%;
+  bottom: 0;
+  left: 0;
+}
+
+#editor2 { 
+  position: absolute;
+  top: 15%;
+  right: 0;
+  bottom: 0;
+  left: 48%;
+}
+
+.editor1 {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.editor2 {
+  position: relative;
+  top: 15%;
+  right: 0;
+  bottom: 0;
+  left: 35%;
+}
