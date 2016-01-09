@@ -14,27 +14,30 @@ $(function() {
   editor1.setKeyboardHandler("ace/keyboard/emacs");
   editor2.setKeyboardHandler("ace/keyboard/emacs");
 
-  populateLangs(languages);
-  populateThemes(themes);
+  populateLangs('.editor1', languages, 'javascript');
+  populateLangs('.editor2', languages, 'java');
 
-  $('.editor1.languages').change(function() {
+  populateThemes('.editor1', themes, 'ambiance');
+  populateThemes('.editor2', themes, 'ambiance');
+
+  $('.languages').change(function() {
     var lang = $(this).val();
-    editor1.getSession().setMode("ace/mode/" + lang);
+    var className = $(this).attr('class');
+    if(className.indexOf('editor1') > -1) {
+      editor1.getSession().setMode("ace/mode/" + lang);
+    } else {
+      editor2.getSession().setMode("ace/mode/" + lang);
+    }
   });
 
-  $('.editor2.languages').change(function() {
-    var lang = $(this).val();
-    editor2.getSession().setMode("ace/mode/" + lang);
-  });
-
-  $('.editor1.themes').change(function() {
+  $('.themes').change(function() {
     var theme = $(this).val();
-    editor1.setTheme("ace/theme/" + theme);
-  });
-
-  $('.editor2.themes').change(function() {
-    var theme = $(this).val();
-    editor2.setTheme("ace/theme/" + theme);
+    var className = $(this).attr('class');
+    if(className.indexOf('editor1') > -1) {
+      editor1.setTheme("ace/theme/" + theme);
+    } else {
+      editor2.setTheme("ace/theme/" + theme);
+    }
   });
 
   $('.keybinding').change(function() {
@@ -44,24 +47,24 @@ $(function() {
   });
 });
 
-function populateLangs(languages) {
+function populateLangs(editorClass, languages, selected) {
   for(var i = 0; i < languages.length; i++) {
     var lang = languages[i];
-    if (i == 0) {
-      $('.languages').append('<option value=' + lang + ' selected>' + lang + '</option>');
+    if (lang === selected) {
+      $(editorClass + '.languages').append('<option value=' + lang + ' selected>' + lang + '</option>');
     } else {
-      $('.languages').append('<option value=' + lang + '>' + lang + '</option>');
+      $(editorClass + '.languages').append('<option value=' + lang + '>' + lang + '</option>');
     }
   }
 }
 
-function populateThemes(themes) {
+function populateThemes(editorClass, themes, selected) {
   for(var i = 0; i < themes.length; i++) {
     var theme = themes[i];
-    if (i == 0) {
-      $('.themes').append('<option value=' + theme + ' selected>' + theme + '</option>');
+    if (theme == selected) {
+      $(editorClass + '.themes').append('<option value=' + theme + ' selected>' + theme + '</option>');
     } else {
-      $('.themes').append('<option value=' + theme + '>' + theme + '</option>');
+      $(editorClass + '.themes').append('<option value=' + theme + '>' + theme + '</option>');
     }
   }
 }
