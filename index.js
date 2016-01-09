@@ -2,11 +2,11 @@ $(function() {
   var themes = ['ambiance', 'solarized_dark', 'chaos', 'chrome', 'dawn', 'dreamweaver', 'github', 'idle_fingers', 'monokai'];
   var languages = ['java', 'javascript', 'python', 'rust', 'c++'];
 
-  var editor1 = ace.edit("editor1");
+  var editor1 = ace.edit("editor-id-1");
   editor1.setTheme("ace/theme/ambiance");
   editor1.getSession().setMode("ace/mode/javascript");
 
-  var editor2 = ace.edit("editor2");
+  var editor2 = ace.edit("editor-id-2");
   editor2.setTheme("ace/theme/ambiance");
   editor2.getSession().setMode("ace/mode/java");
 
